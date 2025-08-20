@@ -1,0 +1,39 @@
+unf
+trpenjualan
+namapembeli+kodepembeli+alamatpembeli+nomor.faktur+tanggal.faktur+jenisjual+kodejenisjual+{kode barang+nama barang+satuan+qty+harga+jumlah+total+bayar+kembalian+sisa}+nama.karyawan+kodekaryawan+namapenerima
+
+1NF
+trpenjualan:
+namapembeli+@kodepembeli+alamatpembeli+@nomor.faktur+tanggal.faktur+jenisjual+@kodejenisjual+@kode barang+nama barang+satuan+qty+bagian+nama.karyawan+@kodekaryawan+namapenerima
++ tlppembeli + alamatkaryawan + tlp karyawan + kodebagian
+
+2NF
+trheaderpenjualan =
+namapembeli+@kodepembeli+alamatpembeli+@nomor.faktur+tanggal.faktur+jenisjual+@kodejenisjual + 
+bagian + nama.karyawan + @kodekaryawan + namapenerima + tlppembeli + alamatkaryawan + tlp karyawan + kodebagian
+
+trdetail = @nomor.faktur+@kodebarang+qty
+
+msbarang = 
+@kode barang+nama barang+satuan+harga
+
+3NF
+mspembelli =
+@kodepembeli+namapembeli+alamatpembeli+nohpembeli
+
+mskarywan
+@kodekaryawan+namakaryawan+#kodebagian+alamatkaryawan+nohpkaryawan
+
+msbagian
+@kodebagian+namabagian
+
+msbarang
+@kodebarang+namabarang+satuan+harga
+
+trheaderpenjualan
+@nomor.faktur+tanggal.faktur+#kodejenisjual+#kodepembeli+#kodekaryawan
+
+trdetail
+#nomor.faktur + #kodebarang + qty
+
+
